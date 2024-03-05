@@ -1,11 +1,9 @@
 package artur.projekt1
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
@@ -78,7 +76,6 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton(android.R.string.ok, null)
             .setCancelable(false)
             .show()
-
     }
 
     private fun validate(): Boolean {
