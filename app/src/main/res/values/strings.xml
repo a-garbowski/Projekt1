@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="screen_name">Create your account</string>
+    <string name="message">O, dzień dobry</string>
+    <string name="default_button_msg">Register</string>
+    <string name="email_hint">Enter your e-mail address:</string>
+    <string name="password_hint">Enter your password:</string>
+    <string name="acc_type_message">Choose your subscription plan.</string>
+    <string name="acc_type_free">Free</string>
+    <string name="acc_type_premium">Premium</string>
+    <string name="marketing_consent">Allow us process your data *</string>
+    <string name="newsletter_consent">Sign up for our newsletter</string>
+    <string name="register_dialog_title">Confirm entered data:</string>
+    <string name="validation_marketing_consent_error">Allowing us to proceed your data is required to register.</string>
+    <string name="validation_email_error">Incorrect e-mail address</string>
+    <string name="validation_password_error">Your password must be at least 6 characters long</string>
+    <string name="email_helper_text">Required *</string>
+    <string name="password_helper_text">At least 6 characters required</string>
+</resources>
