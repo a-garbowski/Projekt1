@@ -1,6 +1,7 @@
 package artur.projekt1
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -70,12 +71,15 @@ class MainActivity : AppCompatActivity() {
             newsletterConsent,
         )
 
-        AlertDialog.Builder(this)
-            .setTitle(R.string.register_dialog_title)
-            .setMessage(dataToSend.toString())
-            .setPositiveButton(android.R.string.ok, null)
-            .setCancelable(false)
-            .show()
+        val intent = Intent(this, ProfileDetailsActivity::class.java)
+        startActivity(intent)
+
+//        AlertDialog.Builder(this)
+//            .setTitle(R.string.register_dialog_title)
+//            .setMessage(dataToSend.toString())
+//            .setPositiveButton(android.R.string.ok, null)
+//            .setCancelable(false)
+//            .show()
     }
 
     private fun validate(): Boolean {
