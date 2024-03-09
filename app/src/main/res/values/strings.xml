@@ -16,4 +16,7 @@
     <string name="validation_password_error">Your password must be at least 6 characters long</string>
     <string name="email_helper_text">Required *</string>
     <string name="password_helper_text">At least 6 characters required</string>
+    <string name="profile_screen_name">Account details:</string>
+    <string name="profile_email">E-mail address: %1$s</string>
+    <string name="profile_acc_type">Subscription type: %1$s</string>
 </resources>

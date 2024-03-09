@@ -72,14 +72,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         val intent = Intent(this, ProfileDetailsActivity::class.java)
+        intent.putExtra(ProfileDetailsActivity.PROFILE_KEY, dataToSend)
         startActivity(intent)
-
-//        AlertDialog.Builder(this)
-//            .setTitle(R.string.register_dialog_title)
-//            .setMessage(dataToSend.toString())
-//            .setPositiveButton(android.R.string.ok, null)
-//            .setCancelable(false)
-//            .show()
     }
 
     private fun validate(): Boolean {
