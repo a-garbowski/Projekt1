@@ -85,8 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_number_hint"
-            android:maxLines="1"
-            android:inputType="textPassword"
+            android:maxLength="9"
+            android:inputType="text|number"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

@@ -17,12 +17,14 @@ class MainActivity : AppCompatActivity() {
 
     private var inputEmail: TextInputEditText? = null
     private var inputPassword: TextInputEditText? = null
+    private var inputPhoneNumber: TextInputEditText? = null
     private var checkAccType: RadioGroup? = null
     private var checkMarketingConsent: CheckBox? = null
     private var checkNewsletterConsent: CheckBox? = null
     private var registerButton: Button? = null
     private var inputEmailLayout: TextInputLayout? = null
     private var inputPasswordLayout: TextInputLayout? = null
+    private var inputPhoneNumberLayout: TextInputLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +41,17 @@ class MainActivity : AppCompatActivity() {
         inputPassword?.doAfterTextChanged {
             inputPasswordLayout?.error = ""
         }
+        inputPhoneNumber = findViewById(R.id.input_phone_number)
+        inputPhoneNumber?.doAfterTextChanged {
+            inputPhoneNumberLayout?.error = ""
+        }
         checkAccType = findViewById(R.id.check_acc_type)
         checkMarketingConsent = findViewById(R.id.check_marketing_consent)
         checkNewsletterConsent = findViewById(R.id.check_newsletter_consent)
         registerButton = findViewById(R.id.button)
         inputEmailLayout = findViewById(R.id.textInputLayoutEmail)
         inputPasswordLayout = findViewById(R.id.textInputLayoutPassword)
+        inputPhoneNumberLayout = findViewById(R.id.textInputLayoutPhoneNumber)
         registerButton?.setOnClickListener {
             if (validate()) {
                 sendForm()
@@ -55,6 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun sendForm() {
         val email: String = inputEmail?.text.toString()
         val password: String = inputPassword?.text.toString()
+        val phoneNumber: String = inputPhoneNumber?.text.toString()
         val subscriptionPlan: SubscriptionType = when (checkAccType?.checkedRadioButtonId) {
             R.id.radio_free -> SubscriptionType.Free
             R.id.radio_premium -> SubscriptionType.Premium
@@ -66,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         val dataToSend = FormModel(
             email,
             password,
+            phoneNumber,
             subscriptionPlan,
             marketingConsent,
             newsletterConsent,
@@ -89,6 +98,12 @@ class MainActivity : AppCompatActivity() {
         if (password.length < 6) {
             isValid = false
             inputPasswordLayout?.error = getString(R.string.validation_password_error)
+        }
+
+        val phoneNumber: String = inputPhoneNumber?.text.toString()
+        if (phoneNumber.length < 9) {
+            isValid = false
+            inputPhoneNumberLayout?.error = getString(R.string.validation_phone_number_error)
         }
 
         val dataConsent: Boolean = checkMarketingConsent?.isChecked ?: false

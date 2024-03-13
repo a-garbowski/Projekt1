@@ -9,6 +9,7 @@ enum class SubscriptionType {
 data class FormModel(
     val email: String,
     val password: String,
+    val phoneNumber: String,
     val accType: SubscriptionType,
     val marketingConsent: Boolean,
     val newsletterConsent: Boolean,
