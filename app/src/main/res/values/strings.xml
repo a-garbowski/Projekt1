@@ -5,6 +5,7 @@
     <string name="default_button_msg">Register</string>
     <string name="email_hint">Enter your e-mail address:</string>
     <string name="password_hint">Enter your password:</string>
+    <string name="phone_number_hint">Enter your phone number:</string>
     <string name="acc_type_message">Choose your subscription plan.</string>
     <string name="acc_type_free">Free</string>
     <string name="acc_type_premium">Premium</string>
@@ -16,6 +17,7 @@
     <string name="validation_password_error">Your password must be at least 6 characters long</string>
     <string name="email_helper_text">Required *</string>
     <string name="password_helper_text">At least 6 characters required</string>
+    <string name="phone_number_helper_text">9 characters required</string>
     <string name="profile_screen_name">Account details:</string>
     <string name="profile_email">E-mail address: %1$s</string>
     <string name="profile_acc_type">Subscription type: %1$s</string>
