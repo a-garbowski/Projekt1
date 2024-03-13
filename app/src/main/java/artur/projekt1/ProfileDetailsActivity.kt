@@ -1,14 +1,10 @@
 package artur.projekt1
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import artur.projekt1.model.FormModel
-import org.w3c.dom.Text
-import java.text.Normalizer.Form
-
-private const val logTag = "Arturo - ProfileDetailsActivity"
+import timber.log.Timber
 
 class ProfileDetailsActivity : AppCompatActivity() {
 
@@ -21,9 +17,10 @@ class ProfileDetailsActivity : AppCompatActivity() {
         const val PROFILE_KEY = "artur.projekt1.ProfileDetailsActivity.PROFILE_KEY"
     }
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i(logTag, "onCreate")
+        Timber.i("onCreate")
         receiveFormModel = intent.getSerializableExtra(PROFILE_KEY) as FormModel
         setContentView(R.layout.activity_profile_details)
         setUpViews()
@@ -45,31 +42,31 @@ class ProfileDetailsActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.i(logTag, "onStart")
+        Timber.i("onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i(logTag, "onResume")
+        Timber.i("onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i(logTag, "onPause")
+        Timber.i("onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i(logTag, "onStop")
+        Timber.i("onStop")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i(logTag, "onDestroy")
+        Timber.i("onDestroy")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.i(logTag, "onRestart")
+        Timber.i("onRestart")
     }
 }
