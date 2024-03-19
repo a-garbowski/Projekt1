@@ -19,7 +19,7 @@
     <string name="email_helper_text">Required *</string>
     <string name="password_helper_text">At least 6 characters required</string>
     <string name="phone_number_helper_text">9 characters required</string>
-    <string name="profile_screen_name">Account details:</string>
+    <string name="profile_screen_name">Account details</string>
     <string name="profile_email">E-mail address: %1$s</string>
     <string name="profile_phone_number">Phone number: %1$s</string>
     <string name="profile_acc_type">Subscription type: %1$s</string>
