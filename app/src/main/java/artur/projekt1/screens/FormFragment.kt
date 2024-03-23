@@ -1,7 +1,6 @@
 package artur.projekt1.screens
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +10,13 @@ import android.widget.CheckBox
 import android.widget.RadioGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
-import artur.projekt1.ProfileDetailsActivity
+import artur.projekt1.MainActivity
 import artur.projekt1.R
 import artur.projekt1.model.FormModel
 import artur.projekt1.model.SubscriptionType
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import timber.log.Timber
 
 class FormFragment : Fragment() {
 
@@ -37,12 +37,13 @@ class FormFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val createdView: View = inflater.inflate(R.layout.fragment_form, container, false)
+        Timber.i("Container ID: ${container?.id}")
         return createdView
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupViews(view)
+    override fun onViewCreated(createdView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(createdView, savedInstanceState)
+        setupViews(createdView)
     }
 
     private fun setupViews(createdView: View) {
@@ -92,10 +93,7 @@ class FormFragment : Fragment() {
             marketingConsent,
             newsletterConsent,
         )
-
-        val intent = Intent(requireContext(), ProfileDetailsActivity::class.java)
-        intent.putExtra(ProfileDetailsActivity.PROFILE_KEY, dataToSend)
-        startActivity(intent)
+        (activity as MainActivity).notifyingForm(dataToSend)
     }
 
     private fun validate(): Boolean {

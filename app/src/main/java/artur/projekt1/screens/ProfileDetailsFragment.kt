@@ -32,6 +32,7 @@ class ProfileDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        receiveFormModel = getArguments()?.getSerializable(PROFILE_KEY) as FormModel?
         setUpViews(view)
     }
 
